@@ -1,0 +1,44 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+package user;
+
+
+service UserDashboard {
+    rpc createUser (CreateUserRequest) returns (CreateUserResponse);
+}
+
+// The request message containing the user ID.
+message CreateUserRequest {
+    string username = 1;
+    string password = 2;
+    string firstName = 3;
+    string lastName = 4;
+    string email = 5;
+    string phoneNumber = 6;
+    string gender = 7;
+    string birthday = 8;
+    string avatar = 9;
+}
+
+// The response message containing the user information.
+message CreateUserResponse {
+    int32 id = 1;
+    string username = 2;
+    string firstName =3 ;
+    string lastName = 4;
+    string avatar=5;
+    string phoneNumber= 6;
+    string email = 7;
+    string gender = 8;
+    google.protobuf.Timestamp  birthday = 9;
+    string address = 10;
+    string permissions = 11;
+    bool isActive = 12;
+    google.protobuf.Timestamp createdAt = 13;
+    string password = 14;
+    google.protobuf.Timestamp updatedAt = 15;
+}
+
+    
